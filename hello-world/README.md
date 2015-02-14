@@ -8,12 +8,17 @@ Installed: Docker, Java 1.7, Maven 3.x
 
 #####Clone source code from git
 ```
-$ git clone https://github.com/dstar55/docker-for-java-developers
+$ git clone https://github.com/dstar55/docker-for-java-developers/hello-world .
 ```
 
 #####Build project with Maven
 ```
 $ mvn clean install
+```
+
+#####Move application to data folder
+```
+$ mv ./target/hello*.jar ./data
 ```
 
 #####Build Docker image
@@ -29,12 +34,13 @@ $ docker run -it --rm hello-world-java
 ```
 
 #####Test application
-find ContainerId of the running Docker image
+first you need to find ContainerId of the running Docker image
 ```
 $ docker ps
 ```
+you can find ContainerId in a row where IMAGE column contains 'hello-world-java' phrase
 
-then IP address of the running Docker image
+then you need to find IP address of the running Docker image
 ```
 $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' [ContainerId]
 ```
@@ -42,5 +48,10 @@ $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' [ContainerId]
 now test application
 ```
 $ curl [IPAddress]:8080
+```
+
+the respone should be
+```
+Hello World
 ```
 
