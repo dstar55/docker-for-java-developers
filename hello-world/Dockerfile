@@ -1,6 +1,9 @@
 #pull base image
 FROM dockerfile/java:oracle-java7
 
+#maintainer 
+MAINTAINER chris@chrisrichardson.net
+
 #expose port 8080
 EXPOSE 8080
 
