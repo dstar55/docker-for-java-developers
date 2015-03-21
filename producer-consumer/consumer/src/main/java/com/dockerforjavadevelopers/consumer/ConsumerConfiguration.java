@@ -15,7 +15,7 @@ import com.dockerforjavadevelopers.service.Preview;
 @EnableAutoConfiguration
 public class ConsumerConfiguration {
 
-    private String destination = "destination";
+    public static String DESTINATION = "destination";
 
     @Bean
     Preview preview() {
@@ -42,10 +42,9 @@ public class ConsumerConfiguration {
     SimpleMessageListenerContainer container(ConnectionFactory connectionFactory) {
    	
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-        //container.setMessageListener(messageListener);
         container.setMessageListener(adapter());        
         container.setConnectionFactory(connectionFactory);
-        container.setDestinationName(destination);
+        container.setDestinationName(DESTINATION);
         return container;
     }
 

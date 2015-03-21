@@ -11,8 +11,9 @@ public class Consumer {
 	private IPreview preview;
 
 	public void receiveMessage(String message) {
-        System.out.println("Received = " +  message );
-        preview.createPreview();
-        
+
+		System.out.println("Message received : " +  message );
+		
+        preview.createPreview();        
     }
 }
