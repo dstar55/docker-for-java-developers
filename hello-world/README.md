@@ -1,4 +1,4 @@
-####Hello World sample shows how to deploy [SpringBoot](http://projects.spring.io/spring-boot/) application with [Docker](https://www.docker.com/)
+####Hello World sample shows how to deploy [SpringBoot](http://projects.spring.io/spring-boot/) [RESTful web service](https://spring.io/understanding/REST) application with [Docker](https://www.docker.com/)
 
 ####Prerequisite
 
@@ -8,7 +8,12 @@ Installed: Docker, Java 1.7, Maven 3.x
 
 #####Clone source code from git
 ```
-$ git clone https://github.com/dstar55/docker-for-java-developers/hello-world .
+$ git clone https://github.com/dstar55/docker-for-java-developers .
+```
+
+#####Move to hello world example
+```
+$ cd hello-world
 ```
 
 #####Build project with Maven
@@ -26,7 +31,7 @@ $ mv ./target/hello*.jar ./data
 $ docker build -t="hello-world-java" .
 ```
 
-Note:if you run this command for first time it will take time to download base image from Docker Hub
+Note:if you run this command for first time it will take some time in oredr to download base image from [DockerHub](https://hub.docker.com/)
 
 #####Run Docker image
 ```
